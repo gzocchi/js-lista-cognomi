@@ -26,12 +26,19 @@ do {
   
   // cerco eventuali numeri all'interno della stringa
   var presenzaNumeri = false;
-  var n = 0;
+  /*var n = 0;
   while (n < cognomeUtente.length && presenzaNumeri == false) {
       if (isNaN(parseInt(cognomeUtente[n])) == false) {
         presenzaNumeri = true;
       };
       n++;
+  };*/
+
+  for (var n = 0; n < cognomeUtente.length; n++) {
+    if (isNaN(parseInt(cognomeUtente[n])) == false) {
+        presenzaNumeri = true;
+        break;
+    };
   };
   
 } while (cognomeUtente == "" || parseInt(cognomeUtente) || presenzaNumeri);
