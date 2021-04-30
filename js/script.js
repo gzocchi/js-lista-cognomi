@@ -32,7 +32,7 @@ do {
 console.log(cognomeUtente);
 
 // porto il cognome ad avere la prima lettera maiuscola
-var cognome = cognomeUtente.charAt(0).toUpperCase() + cognomeUtente.slice(1);
+var cognome = cognomeUtente.charAt(0).toUpperCase() + cognomeUtente.slice(1).toLowerCase();
 // porto i cognomi composti ad avere ogni prima lettera maiuscola
 for (i = 0; i < cognome.length; i++) {
   if (cognome[i] == " ") {
@@ -49,4 +49,10 @@ arrayCognomi.sort();
 // stampo elenco cognomi
 for (i = 0; i < arrayCognomi.length; i++) {
   console.log(i + 1, "-", arrayCognomi[i]);
+  
+  if (arrayCognomi[i] == cognome) {
+    document.getElementById("cognomi").innerHTML += '<li id="cognome_utente">' + arrayCognomi[i] + "</li>"
+  } else {
+      document.getElementById("cognomi").innerHTML += "<li>" + arrayCognomi[i] + "</li>"
+  }
 }
