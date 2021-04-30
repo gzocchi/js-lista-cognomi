@@ -23,8 +23,19 @@ do {
   var cognomeUtente = prompt("Scrivi il tuo cognome");
   //elimino eventuali spazi iniziali e finali + stringa minuscola
   cognomeUtente = cognomeUtente.trim().toLowerCase();
-} while ( cognomeUtente == "" || parseInt(cognomeUtente));
-// ripeto la domanda se la stringa è vuota o ha un numero iniziale
+  
+  // cerco eventuali numeri all'interno della stringa
+  var presenzaNumeri = false;
+  var n = 0;
+  while (n < cognomeUtente.length && presenzaNumeri == false) {
+      if (parseInt(cognomeUtente[n])) {
+        presenzaNumeri = true;
+      };
+      n++;
+  };
+  
+} while (cognomeUtente == "" || parseInt(cognomeUtente) || presenzaNumeri);
+// ripeto la domanda se la stringa è vuota, se ha un numero iniziale o contiene un numero
 
 // debug
 console.log(cognomeUtente);
@@ -37,8 +48,8 @@ for (i = 0; i < cognome.length; i++) {
     x = i + 1;
     y = i + 2;
     cognome = cognome.slice(0, x) + cognome.charAt(x).toUpperCase() + cognome.slice(y);
-  }
-}
+  };
+};
 
 // aggiungo il cognome manipolato all'array
 arrayCognomi.push(cognome);
@@ -52,5 +63,5 @@ for (i = 0; i < arrayCognomi.length; i++) {
     document.getElementById("cognomi").innerHTML += '<li id="cognome_utente">' + arrayCognomi[i] + "</li>"
   } else {
       document.getElementById("cognomi").innerHTML += "<li>" + arrayCognomi[i] + "</li>"
-  }
-}
+  };
+};
