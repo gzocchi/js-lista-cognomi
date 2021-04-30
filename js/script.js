@@ -28,7 +28,7 @@ do {
   var presenzaNumeri = false;
   var n = 0;
   while (n < cognomeUtente.length && presenzaNumeri == false) {
-      if (parseInt(cognomeUtente[n])) {
+      if (isNaN(parseInt(cognomeUtente[n])) == false) {
         presenzaNumeri = true;
       };
       n++;
