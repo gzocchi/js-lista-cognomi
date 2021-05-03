@@ -68,3 +68,6 @@ for (i = 0; i < arrayCognomi.length; i++) {
       document.getElementById("cognomi").innerHTML += "<li>" + arrayCognomi[i] + "</li>"
   };
 };
+
+var posizione = arrayCognomi.indexOf(cognome) + 1;
+console.log("Posizione conome:",posizione);
